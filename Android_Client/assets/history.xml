@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<content>
+	 <head>
+	     <style>
+	         
+	        .body1 {width:320px;height:460px;background-image:url(bodybg.png);}
+            .div1 {left:1px;position:fixed;height:35px;border:0px;background-image:url(progressb.png);}
+            .div11 {position:fixed;height:30px;border:0px;}
+         		
+         	.mylist {border: 1px solid #ffffff;height:130px;left:5px;width:308px;}  	
+         	
+         
+           
+            .div2 {height:440px;}
+            .label {text-align:left;border: 1px solid #ffffff;left:3px;font-size:13px;color:#000000;}                       
+                               
+                                
+            .label1 {height:200px;border:0px;left:6px;font-size:16px;color:#000000;}
+            .label2 {top:5px;font-size:15px;left:130px;color:#FFFFFF;background-image:url(progressb.png);}
+            .label3 {border:0px;width:90px;font-size:15px;color:#cd0000;}
+           
+  
+            .input3 {height:100px;width:310px;top:2px;color:#cd0000;font-size:14px;background-image:url(bodybg.png);}
+            .input4 {height:30px;width:150px;top:2px;color:#ffffff;font-size:14px;background-image:url(progressb.png);}
+            .input5 {height:30px;width:155px;top:2px;color:#ffffff;font-size:14px;left:155px;background-image:url(progressb.png);}
+            .input6 {text-align:center;border: 1px solid #ffffff;color:#ffffff;font-size:13px;}  
+            
+            
+            
+           	.td2 {width:150px;height:30px;border: 1px solid #ffffff;color:#ffffff;font-size:15px;background-image:url(progressb.png);}
+            .table1 {left:5px;border: 1px solid #ffffff;width:310px;top:40px;font-size:11px;}
+            .table2 {left:5px;border: 1px solid #ffffff;width:310px;font-size:11px;}
+            .table3 {left:5px;border:0px;width:310px;height:50px;}
+            
+          
+            
+	         
+	         </style>
+	   
+	         
+	        <script type="text/x-lua" src="RYTL.lua"></script>
+	        <script type="text/x-lua" src="parseJson.lua"></script>
+        	<script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+                --返回事件
+              	function  return1()
+         			
+					ryt:back();
+					
+					
+				end;
+				--获取数据
+				--append();
+				--local text=document:getElementsByName("mylist1");
+    			--text[1]:setPropertyByName("text",global_tab["note"]);
+    			    			
+    				fuck();    				
+				--回复事件   
+              	function  reply1()
+         			
+         			
+					local div=document:getElementsByName("reply");
+					div[1]:setPropertyByName("hide", "false");
+					local table=document:getElementsByName("repose1");
+					table[1]:setPropertyByName("hide", "true");
+					local tr=document:getElementsByName("repose2");
+					tr[1]:setPropertyByName("hide", "false");
+					local textarea=document:getElementsByName("textarea1");
+					textarea[1]:setPropertyByName("focus", "true");
+					location:reload();
+
+				end;
+			--提交事件
+				function  reply2()
+         			
+					local div=document:getElementsByName("reply");
+					div[1]:setPropertyByName("hide", "true");
+					local table=document:getElementsByName("repose1");
+					table[1]:setPropertyByName("hide", "false");
+					local tr=document:getElementsByName("repose2");
+					tr[1]:setPropertyByName("hide", "true");
+					local textarea=document:getElementsByName("textarea1");
+					textarea[1]:setPropertyByName("focus", "false");					   			    				   				    				   			
+    				append();    				
+					
+					location:reload();
+
+				end;
+				
+					        
+            ]]>
+        </script>
+	         
+	    
+	 </head>
+ 
+	 <body class="body1">
+	     
+	      <div class="div1">
+            <label class="label2" >变更历史</label>
+        </div>
+        <div border="0" class="div2" name="div2">
+      
+      		<mylist  time="4周 ago" person="huang.miaomiao" text="对于方案2如果需要下载的资源很多，此时用户需要等相当长一段时间才能进入界面。
+      		    麻烦问一下：客户端包有没有预置资源？ 管理后台有将确保更新置为true？">	
+      		   
+      		    
+      		</mylist>
+
+             
+		</div>
+		
+        <table   class="table2" hide="true"  name="reply" separator="#ffffff" >
+                <tr class="tr1">
+				<label class="label3" >回复:</label>
+				</tr>
+				<tr>
+            	<textarea  border="0" class="label1"  value=" " focus="false" name="textarea1"></textarea>
+            	</tr>
+            	</table>
+            	
+        <div class="div11">
+			
+		<table class="table3" >
+            <tr hide="false" name="repose1">
+                <td class="td2" align="center" valign="middle"><input  class="input6" type="button" name="button0"  onclick="reply1()" value="回复"></input></td>
+
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="input" onclick="return1()" value="返回"></input></td>
+            </tr>
+            
+            <tr hide="true" name="repose2">
+                <td class="td2" align="center" valign="middle"><input  class="input6" type="button" name="button0"  onclick="reply2()" value="提交"></input></td>
+
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="input" onclick="return1()" value="返回"></input></td>
+            </tr>
+            
+        </table>
+          
+      </div>
+        
+    </body>
+    
+</content>

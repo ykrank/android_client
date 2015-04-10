@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:singleLine="true"
+            android:text="概    述:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+        <EditText
+            android:id="@+id/Overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="概    述:"
+            android:ems="10" >
+
+            
+        </EditText>
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+    
+    
+    	<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="报告人:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    	<EditText
+    	    android:id="@+id/Reporter"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_weight="1"
+    	    android:text="概    述:"
+    	    android:ems="10" />
+
+        </LinearLayout>
+        
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="描    述:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/Describe"
+        android:layout_width="wrap_content"
+        android:layout_height="138dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:text="概    述:"
+        android:inputType="textMultiLine" />
+    
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="类    型:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="140dp"
+        android:layout_height="56dp"
+        android:entries="@array/lx" />
+    
+    <TextView
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="优先级:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="140dp"
+        android:layout_height="56dp" 
+        android:entries="@array/yxj" />
+    
+	 </LinearLayout>
+	 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="里程碑:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="140dp"
+        android:layout_height="56dp"
+        android:entries="@array/lcb" />
+    
+    <TextView
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="组    件:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="140dp"
+        android:layout_height="56dp"
+        android:entries="@array/zj" />
+    
+	 </LinearLayout>
+	 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="版    本:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+
+    <Spinner
+        android:id="@+id/spinner5"
+        android:layout_width="140dp"
+        android:layout_height="56dp"
+        android:entries="@array/bb" />
+    
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="关键词:"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/Antistop"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:text="概    述:"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+    
+	 </LinearLayout>
+	 
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boder"
+        android:orientation="horizontal" >
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="抄    送:"
+            android:textColor="#000000"
+            
+            android:textSize="25dp" />
+
+    <EditText
+        android:id="@+id/Copy"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:text="概    述:"
+        android:lines="2"
+        android:ems="10" >
+
+        
+    </EditText>
+
+     <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Regression:"
+            android:textColor="#000000"
+            android:textSize="25dp" />
+     
+     
+
+	<RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp" >
+    <RadioButton
+        android:id="@+id/radioButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="open" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="verified" />
+    </RadioGroup>
+    
+	 </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+            android:background="@drawable/boder"
+            android:orientation="vertical"
+            android:padding="10dp" >
+    
+            <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:checked="true"
+                android:text="leave为closed" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:text="reopen  处理结果将设置为已删除. 下一个状态将是'reopened'. " />
+            </RadioGroup>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+            android:background="@drawable/boder"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+             >
+            
+        <TextView
+        android:layout_width="wrap_content"
+       	android:layout_height="60dp"
+        android:singleLine="true"
+        android:gravity="center"
+        
+        android:text="Changed by :"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
+	    <TextView
+	        android:id="@+id/Person"
+	        android:layout_width="400dp"
+	        android:layout_height="60dp"
+	        android:gravity="center"
+	        android:singleLine="true"
+	        android:text="我是通过text2属性设置的属性设置"
+	        android:textColor="#cd0000"
+	        android:textSize="25dp" />
+
+            
+        </LinearLayout>
+        
+        <TextView
+	        android:id="@+id/persong"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        
+	        
+	        android:text=""
+	        android:textColor="#cd0000"
+	        android:textSize="25dp" />
+
+</LinearLayout>

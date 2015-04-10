@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--android:shape="oval"表示所要绘制的图形是一个椭圆，默认是rectangle，长方形-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"> 
+<!--gradient 产生颜色渐变 android:angle 从哪个角度开始变 只有90的整数倍可以 -->
+<gradient 
+    android:startColor="#bb555555" 
+    android:centerColor="#dddddd" 
+    android:centerY="0.5" 
+    android:endColor="#bb555555" 
+    android:angle="270" 
+/> 
+<!--和CSS中的padding应该是一个道理-->
+<padding
+    android:left="7dp"
+    android:top="7dp"
+    android:right="7dp" 
+    android:bottom="7dp" /> 
+</shape>

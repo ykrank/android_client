@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<content>
+	 <head>
+	     <style>
+	         
+	        .body1 {width:320px;height:460px;background-image:url(bodybg.png);}
+            .div1 {left:1px;position:fixed;height:35px;border:0px;background-image:url(progressb.png);} 
+            .div11 {position:fixed;height:30px;border:0px;right:5px}
+           	
+         
+            .div {border: 1px solid #ffffff;left:5px;}
+            .div2 {background-color:#ffffff;border: 1px solid #ffffff;left:5px;right:5px}
+            .label {text-align:left;border: 1px solid #ffffff;left:3px;font-size:13px;color:#000000;}                       
+                               
+                                
+            .label1 {border: 1px solid #ffffff;left:6px;font-size:16px;color:#000000;}
+            .modifie {border: 1px solid #ffffff;left:6px;width:310px;height:500px;}
+            .label2 {top:5px;font-size:15px;left:140px;color:#FFFFFF;background-image:url(progressb.png);}
+            .label3 {border:0px;width:90px;font-size:20px;color:#cd0000;}
+           
+  
+            .input3 {height:100px;width:310px;top:2px;color:#cd0000;font-size:14px;background-image:url(bodybg.png);}
+            .input4 {height:30px;width:150px;top:2px;color:#ffffff;font-size:14px;background-image:url(progressb.png);}
+            .input5 {height:30px;width:155px;top:2px;color:#ffffff;font-size:14px;left:155px;background-image:url(progressb.png);}
+            
+            
+            
+           
+            .table1 {left:5px;border: 1px solid #ffffff;width:310px;top:40px;font-size:11px;}
+            .table2 {left:5px;border: 1px solid #ffffff;width:310px;font-size:11px;}
+            .table3 {left:5px;border:0px;width:310px;height:50px;}
+            
+          
+            
+	         
+	         </style>
+	   
+	         
+	        <script type="text/x-lua" src="RYTL.lua"></script>
+        	<script type="text/x-lua">
+            <![CDATA[
+                
+                ryt = RYTL:new{};
+              	--返回按钮事件
+              	function  change()
+         			
+					ryt:back();
+					
+				end;	               
+            ]]>
+        </script>
+	         
+	    
+	 </head>
+ 
+	 <body class="body1">
+	     
+	      <div class="div1">
+            <label class="label2" >修改</label>
+        </div>
+ 		
+          
+      <modifie Overview="交付反馈-离线资源更新问题" Reporter="yao.mingwei"
+          		Describe="1)使用项目 上海农商直销银行              
+				2)问题平台 iPhone/Android                                         
+ 				3)问题设备 All                                                   
+				4)问题系统                                                                                                                
+				5)代码地址                                                                                                                                       
+				6)测试地址                                                                                                                                                           
+				7)测试账户                                                                                                                                                            
+				8)问题描述 目前离线更新存在没有更新完成就跳转的bug, 导致客户端弹框报 服务器升级中的问题。                                                               
+				9)重现步骤 打开 app, 有离线资源更新，点击确定按钮                                                                                                                                          
+				10)重现几率 使用 3G 网络 100%（必现）                                                                                                                                                               
+				11)预期结果 离线资源下载完成后跳转进入首页                                                                                                                                        
+				12)实际结果 截图 见附件                                                                                               "
+				Antistop=""  Copy="liu.wenzhu, zhao.bin, liu.jun"
+				
+				Person="yao.mingwei"
+          ></modifie>
+						
+          <div class="div11">
+		     <input type="button" class="input4" name="button" value="    提交      "></input>
+		     
+         	 
+ 			 <input type="button" class="input5" name="button" onclick="change()" value="    返回      "></input>
+ 				
+ 		</div>
+          
+      
+        
+    </body>
+    
+</content>

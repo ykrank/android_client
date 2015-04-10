@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>  
+    <string-array name="lx">  
+        <item>defect</item>  
+        <item>ebhancement</item>          
+        <item>task</item>  
+                 
+    </string-array>  
+    
+    <string-array name="yxj">  
+        <item>blocker</item>  
+        <item>critical</item>          
+        <item>major</item>  
+        <item>minor</item>          
+        <item>trivial</item>          
+    </string-array> 
+    
+    <string-array name="lcb">  
+        <item>V5.2</item>  
+        <item>北京</item>          
+        <item>广州</item>  
+        <item>上海</item>          
+        <item>沈阳</item>          
+    </string-array> 
+    
+    <string-array name="zj">  
+        <item>产品问题反馈</item>  
+        <item>工具使用反馈</item>          
+        <item>文档支持反馈</item>  
+                 
+    </string-array> 
+    
+    <string-array name="bb">  
+        <item>5.2.43</item>  
+        <item>5.2.31</item>          
+                
+    </string-array> 
+</resources>  

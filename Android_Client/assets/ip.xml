@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    
+    <head>
+        <style>
+            .body1 {width:320px;height:460px;background-image:url(bodybg.png);}
+            .div1 {left:1px;position:fixed;height:35px;border:0px;background-image:url(progressb.png);}        
+           	.myview1 {border: 1px solid #ffffff;height:255px;width:310px;}       
+            .div {border: 1px solid #ffffff;left:5px;}
+            .div2 {background-color:#ffffff;border: 1px solid #ffffff;left:5px;right:5px;top:300px}
+            .label {border: 1px solid #ffffff;left:3px;font-size:13px;color:#000000;}                                                      
+            .label1 {height:200px;border:0px;left:6px;font-size:16px;color:#000000;}
+            .label2 {top:5px;left:118px;font-size:15px;color:#FFFFFF;}
+            .label3 {border:0px;width:90px;font-size:14px;color:#cd0000;}
+            
+            .input6 {text-align:center;border: 1px solid #ffffff;color:#ffffff;font-size:13px;}   
+            .table3 {position:fixed;left:5px;border:0px;width:310px;height:50px;}       
+            .table2 {left:5px;border: 1px solid #ffffff;width:310px;font-size:11px;}
+            .tr {border: 1px solid #ffffff;height:40px;color:#ffffff;font-size:13px;}
+            .tr1 {border: 1px solid #ffffff;height:20px;color:#ffffff;font-size:13px;}
+            .td2 {width:75px;height:50px;border: 1px solid #ffffff;color:#ffffff;font-size:15px;background-image:url(progressb.png);}
+                    
+        </style>
+        
+        <script type="text/x-lua" src="RYTL.lua"></script>
+        <script type="text/x-lua" src="parseJson.lua"></script>
+        
+        <script type="text/x-lua">
+            <![CDATA[
+                --定义全局table
+                
+				global_tab = {};
+				
+                ryt = RYTL:new{};
+                --添加历史
+                local ip=file:read("ip.xml","text");
+                history:add(ip);
+             	--局部刷新myview
+              	
+                test([[{"TicketNum":"#80",
+                		"Opened":"#80",
+                		"Theme":"#80",
+                		"Reporter":"lei.zhihui",
+                		"Owner":"liu.xiaofei",
+                		"Priority":"#80",
+                		"Milestone":"#80",
+                		"Component":"#80",
+                		"Versions":"#80",
+                		"Antistop":"#80",
+                		"Copy":"#80",
+                		"Regression":"#80"}]]);
+              	
+              
+             	--回复事件   
+              	function  reply1()
+         			
+         			
+					local div=document:getElementsByName("reply");
+					div[1]:setPropertyByName("hide", "false");
+					local table=document:getElementsByName("repose1");
+					table[1]:setPropertyByName("hide", "true");
+					local tr=document:getElementsByName("repose2");
+					tr[1]:setPropertyByName("hide", "false");
+					local textarea=document:getElementsByName("textarea1");
+					textarea[1]:setPropertyByName("focus", "true");
+					location:reload();
+
+				end;
+			--提交事件
+				function  reply2()
+         			
+					local div=document:getElementsByName("reply");
+					div[1]:setPropertyByName("hide", "true");
+					local table=document:getElementsByName("repose1");
+					table[1]:setPropertyByName("hide", "false");
+					local tr=document:getElementsByName("repose2");
+					tr[1]:setPropertyByName("hide", "true");
+					local textarea=document:getElementsByName("textarea1");
+					textarea[1]:setPropertyByName("focus", "false");
+					local text=document:getElementsByName("textarea1");
+              		
+					global_tab["note"]=text[1]:getPropertyByName("value");  
+					   			
+    					   				
+    				    				   				 				
+					location:reload();
+
+				end;
+				
+				--修改事件   
+              	function  change()
+         			
+					local cont=file:read("change.xml","text");
+					--从上到下主界面滑动离开（不显示）	
+								
+					location:replace(cont);	
+				end;
+				
+				--返回事件   
+              	function  return1()
+         			
+					window:close();
+				end;
+				
+				--变更历史事件   
+              	function  changehistory()
+
+					
+					local cont=file:read("history.xml","text");
+					--从下到上主界面滑动离开（不显示）					
+					location:replace(cont);	
+				end;
+				
+				
+				--
+				
+            ]]>
+        </script>
+        
+        
+    </head>
+    <body class="body1">
+		<div class="div1">
+           	<label class="label2" >TracTickets</label>
+        </div>
+            		
+
+        <div name="myviewcontent" border="0">    
+     	
+        	
+	    </div>
+            
+			<div class="div2">
+				<label class="label3" >描述:</label>
+            	<textarea  enable="true" class="label1" value="1)使用项目 上海农商直销银行              
+				2)问题平台 iPhone/Android                                         
+ 				3)问题设备 All                                                   
+				4)问题系统                                                                                                                
+				5)代码地址                                                                                                                                       
+				6)测试地址                                                                                                                                                           
+				7)测试账户                                                                                                                                                            
+				8)问题描述 目前离线更新存在没有更新完成就跳转的bug, 导致客户端弹框报 服务器升级中的问题。                                                               
+				9)重现步骤 打开 app, 有离线资源更新，点击确定按钮                                                                                                                                          
+				10)重现几率 使用 3G 网络 100%（必现）                                                                                                                                                               
+				11)预期结果 离线资源下载完成后跳转进入首页                                                                                                                                        
+				12)实际结果 截图 见附件                                                                                                                                                                                                 
+				13)原因分析 由于 offline:update_resource(); 没有下载完成的回调，而 直接调用了 location:replace(content); 方法造成。 
+
+
+						方案： 1、能否做成模版控制是否离线资源更新。也就是说把 main.xml 中的判断逻辑放到模版（page_test.cs）中进行动态配置?
+           	    
+            	    ">
+            	</textarea>
+            	
+			</div>
+			
+			    <table   class="table2" hide="true"  name="reply" separator="#ffffff" >
+                <tr class="tr1">
+				<label class="label3" >回复:</label>
+				</tr>
+				<tr>
+            	<textarea  border="0" class="label1"  value="" focus="false" name="textarea1"></textarea>
+            	</tr>
+            	</table>
+			    
+			    
+			
+       
+        <table class="table3" >
+            <tr hide="false" name="repose1">
+                <td class="td2" align="center" valign="middle"><input  class="input6" type="button" name="button0"  onclick="reply1()" value="回复"></input></td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="button0"  onclick="change()" value="修改"></input> </td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="button0"  onclick="changehistory()" value="变更历史"></input></td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="input" onclick="return1()" value="返回"></input></td>
+            </tr>
+            
+            <tr hide="true" name="repose2">
+                <td class="td2" align="center" valign="middle"><input  class="input6" type="button" name="button0"  onclick="reply2()" value="提交"></input></td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="button0"  onclick="change()" value="修改"></input> </td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="button0"  onclick="changehistory()" value="变更历史"></input></td>
+                <td class="td2" align="center" valign="middle"><input class="input6" type="button" name="input" onclick="return1()" value="返回"></input></td>
+            </tr>
+            
+        </table>
+    
+        
+    </body>
+    
+</content>
