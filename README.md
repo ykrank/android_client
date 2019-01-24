@@ -1,2 +1,2 @@
 # android_client
-我的
+EMP lua android client demo
